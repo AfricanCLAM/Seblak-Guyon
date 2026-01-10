@@ -9,8 +9,8 @@ tailwind.config.theme.extend.keyframes = {
 
 // Jam Operasional
 const OPERASIONAL = {
-  biasa: { open: "10:00", close: "22:00" }, // Senin–Rabu, Jumat–Minggu
-  kamis: null // tutup
+  biasa: { open: "10:00", close: "22:00" },
+  kamis: null
 };
 
 function timeToMinutes(time) {
@@ -20,7 +20,7 @@ function timeToMinutes(time) {
 
 function updateOpenStatus() {
   const now = new Date();
-  const day = now.getDay(); // 0=Min, 1=Sen, ..., 4=Kamis
+  const day = now.getDay();
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
   const badge = document.getElementById("openBadge");
@@ -30,7 +30,6 @@ function updateOpenStatus() {
 
   let isOpen = false;
 
-  // Kamis (4) = tutup
   if (day !== 4) {
     const open = timeToMinutes(OPERASIONAL.biasa.open);
     const close = timeToMinutes(OPERASIONAL.biasa.close);
@@ -60,7 +59,7 @@ function updateOpenStatus() {
 }
 
 updateOpenStatus();
-setInterval(updateOpenStatus, 60000); // update tiap menit
+setInterval(updateOpenStatus, 60000);
 
 // Navbar
 const navbar = document.getElementById("navbar");
@@ -90,111 +89,111 @@ const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
 menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+  const isHidden = mobileMenu.classList.toggle("hidden");
+  menuBtn.setAttribute("aria-expanded", !isHidden);
 });
 
-// Menu 
+// Menu Data
 const menus = [
   {
-    "id": 1,
-    "name": "Seblak Original",
-    "category": "Seblak Paket",
-    "description": "Pentol mekar 2, sosis, cireng, pentol, sayur, telur kocok, kerupuk",
-    "price": "10K",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
-    "spicy_level": 3,
-    "is_best_seller": true
+    id: 1,
+    name: "Seblak Original",
+    category: "Seblak Paket",
+    description: "Pentol mekar 2, sosis, cireng, pentol, sayur, telur kocok, kerupuk",
+    price: "10K",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
+    spicy_level: 3,
+    is_best_seller: true
   },
   {
-    "id": 2,
-    "name": "Seblak Siomay",
-    "category": "Seblak Paket",
-    "description": "Siomay 5, cireng, pentol, sayur, telur kocok, kerupuk",
-    "price": "10K",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
-    "spicy_level": 2,
-    "is_best_seller": false
+    id: 2,
+    name: "Seblak Siomay",
+    category: "Seblak Paket",
+    description: "Siomay 5, cireng, pentol, sayur, telur kocok, kerupuk",
+    price: "10K",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
+    spicy_level: 2,
+    is_best_seller: false
   },
   {
-    "id": 3,
-    "name": "Seblak Balungan",
-    "category": "Seblak Paket",
-    "description": "Krongkongan ayam, cireng, pentol, sayur, telur kocok, kerupuk",
-    "price": "10K",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
-    "spicy_level": 3,
-    "is_best_seller": false
+    id: 3,
+    name: "Seblak Balungan",
+    category: "Seblak Paket",
+    description: "Krongkongan ayam, cireng, pentol, sayur, telur kocok, kerupuk",
+    price: "10K",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
+    spicy_level: 3,
+    is_best_seller: false
   },
   {
-    "id": 4,
-    "name": "Seblak Ceker",
-    "category": "Seblak Paket",
-    "description": "Ceker kecil 4, pentol, cireng, sayur, telur kocok, kerupuk",
-    "price": "10K",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
-    "spicy_level": 4,
-    "is_best_seller": true
+    id: 4,
+    name: "Seblak Ceker",
+    category: "Seblak Paket",
+    description: "Ceker kecil 4, pentol, cireng, sayur, telur kocok, kerupuk",
+    price: "10K",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
+    spicy_level: 4,
+    is_best_seller: true
   },
   {
-    "id": 5,
-    "name": "Seblak Pentol",
-    "category": "Seblak Paket",
-    "description": "Pentol 5, cireng, sayur, telur kocok, kerupuk",
-    "price": "10K",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
-    "spicy_level": 2,
-    "is_best_seller": false
+    id: 5,
+    name: "Seblak Pentol",
+    category: "Seblak Paket",
+    description: "Pentol 5, cireng, sayur, telur kocok, kerupuk",
+    price: "10K",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
+    spicy_level: 2,
+    is_best_seller: false
   }
-]
-  ;
+];
 
 const menuGrid = document.getElementById("menu-grid");
 
 menuGrid.innerHTML = menus.map(menu => `
-  <div
-    class="group relative flex flex-col bg-[#161616] rounded-xl border border-[#333] overflow-hidden shadow-retro transition-all duration-300 hover:-translate-y-1 hover:shadow-[7px_7px_0px_0px_#a30300]"
-  >
-    <div class="aspect-[4/3] w-full bg-gray-800 relative overflow-hidden">
-      <div
-        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-        style="background-image: url('${menu.image}')"
-        data-alt="${menu.name}"
-      ></div>
+        <article
+          class="group relative flex flex-col bg-[#161616] rounded-xl border border-[#333] overflow-hidden shadow-retro transition-all duration-300 hover:-translate-y-1 hover:shadow-[7px_7px_0px_0px_#a30300]"
+          role="listitem"
+        >
+          <div class="aspect-[4/3] w-full bg-gray-800 relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+              style="background-image: url('${menu.image}')"
+              role="img"
+              aria-label="${menu.name} - ${menu.description}"
+            ></div>
 
-      ${menu.is_best_seller ? `
-        <div class="absolute top-3 left-3 bg-primary text-white text-xs font-black px-2 py-1 rounded shadow-sm uppercase">
-          Best Seller
-        </div>
-      ` : ""}
-    </div>
+            ${menu.is_best_seller ? `
+              <div class="absolute top-3 left-3 bg-primary text-white text-xs font-black px-2 py-1 rounded shadow-sm uppercase">
+                <i class="fas fa-crown mr-1"></i>Best Seller
+              </div>
+            ` : ""}
+          </div>
 
-    <div class="p-5 flex flex-col flex-1">
-      <div class="flex justify-between items-start mb-2">
-        <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
-          ${menu.name}
-        </h3>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                ${menu.name}
+              </h3>
 
-        <div class="flex gap-0.5 text-primary">
-          ${Array(menu.spicy_level).fill(`
-            <span class="material-symbols-outlined text-[16px] filled">
-              local_fire_department
-            </span>
-          `).join("")}
-        </div>
-      </div>
+              <div class="flex gap-0.5 text-primary" aria-label="Level pedas ${menu.spicy_level}">
+                ${Array(menu.spicy_level).fill(`
+                  <i class="fas fa-fire text-[16px]"></i>
+                `).join("")}
+              </div>
+            </div>
 
-      <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-        ${menu.description}
-      </p>
+            <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+              ${menu.description}
+            </p>
 
-      <div class="mt-auto flex items-center justify-between">
-        <span class="text-accent-gold text-2xl font-black tracking-tight">
-          ${menu.price}
-        </span>
-      </div>
-    </div>
-  </div>
-`).join("");
+            <div class="mt-auto flex items-center justify-between">
+              <span class="text-amber-gold text-2xl font-black tracking-tight">
+                ${menu.price}
+              </span>
+            </div>
+          </div>
+        </article>
+      `).join("");
 
 // Toppings
 const toppings = [
@@ -213,12 +212,13 @@ const toppings = [
 
 document.getElementById("topping-list").innerHTML =
   toppings.map(t => `
-    <span
-      class="px-5 py-3 bg-tropical-mint/10 border-2 border-tropical-mint
-             text-tropical-mint font-black uppercase tracking-widest
-             text-sm rounded-lg flex items-center gap-2"
-    >
-      ${t.name}
-      <span class="text-xs text-amber-gold">${t.price}</span>
-    </span>
-  `).join("");
+          <span
+            class="px-5 py-3 bg-tropical-mint/10 border-2 border-tropical-mint
+                   text-tropical-mint font-black uppercase tracking-widest
+                   text-sm rounded-lg flex items-center gap-2"
+          >
+            <i class="fas fa-plus-circle"></i>
+            ${t.name}
+            <span class="text-xs text-amber-gold">${t.price}</span>
+          </span>
+        `).join("");
