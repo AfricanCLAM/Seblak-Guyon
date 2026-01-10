@@ -7,6 +7,61 @@ tailwind.config.theme.extend.keyframes = {
   },
 };
 
+// Jam Operasional
+const OPERASIONAL = {
+  biasa: { open: "10:00", close: "22:00" }, // Senin–Rabu, Jumat–Minggu
+  kamis: null // tutup
+};
+
+function timeToMinutes(time) {
+  const [h, m] = time.split(":").map(Number);
+  return h * 60 + m;
+}
+
+function updateOpenStatus() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Min, 1=Sen, ..., 4=Kamis
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+  const badge = document.getElementById("openBadge");
+  const badgeText = document.getElementById("badgeText");
+  const ping = document.getElementById("ping");
+  const dot = document.getElementById("dot");
+
+  let isOpen = false;
+
+  // Kamis (4) = tutup
+  if (day !== 4) {
+    const open = timeToMinutes(OPERASIONAL.biasa.open);
+    const close = timeToMinutes(OPERASIONAL.biasa.close);
+    isOpen = currentMinutes >= open && currentMinutes < close;
+  }
+
+  if (isOpen) {
+    badge.className =
+      "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tropical-mint/10 border border-tropical-mint/20 backdrop-blur-sm";
+    badgeText.textContent = "Buka Sekarang";
+    badgeText.className =
+      "text-tropical-mint text-xs font-bold tracking-widest uppercase";
+    ping.className =
+      "animate-ping absolute inline-flex h-full w-full rounded-full bg-tropical-mint opacity-75";
+    dot.className =
+      "relative inline-flex rounded-full h-2.5 w-2.5 bg-tropical-mint";
+  } else {
+    badge.className =
+      "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 backdrop-blur-sm";
+    badgeText.textContent = "Sedang Tutup";
+    badgeText.className =
+      "text-red-400 text-xs font-bold tracking-widest uppercase";
+    ping.className = "hidden";
+    dot.className =
+      "relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500";
+  }
+}
+
+updateOpenStatus();
+setInterval(updateOpenStatus, 60000); // update tiap menit
+
 // Navbar
 const navbar = document.getElementById("navbar");
 

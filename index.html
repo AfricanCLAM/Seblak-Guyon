@@ -46,6 +46,24 @@
         },
       };
     </script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/favicon_io/site.webmanifest" />
   </head>
   <body
     class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden"
@@ -124,22 +142,24 @@
           <div
             class="flex flex-col items-start gap-6 max-w-2xl order-2 lg:order-1 relative"
           >
-            <!-- Open Badge -->
             <div
-              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tropical-mint/10 border border-tropical-mint/20 backdrop-blur-sm"
+              id="openBadge"
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-sm"
             >
               <span class="relative flex h-2.5 w-2.5">
                 <span
-                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tropical-mint opacity-75"
+                  id="ping"
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
                 ></span>
                 <span
-                  class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tropical-mint"
+                  id="dot"
+                  class="relative inline-flex rounded-full h-2.5 w-2.5"
                 ></span>
               </span>
               <span
-                class="text-tropical-mint text-xs font-bold tracking-widest uppercase"
-                >Buka Sekarang</span
-              >
+                id="badgeText"
+                class="text-xs font-bold tracking-widest uppercase"
+              ></span>
             </div>
             <!-- Main Heading -->
             <div class="relative">
@@ -238,7 +258,7 @@
 
     <section
       id="marquee"
-      class="relative w-full overflow-hidden bg-primary py-2 border-t-4 border-black"
+      class="relative w-full overflow-hidden bg-background-light py-2 border-t-4 border-black"
     >
       <div
         class="flex whitespace-nowrap gap-8 animate-[marquee_20s_linear_infinite]"
@@ -486,12 +506,12 @@
           </h4>
           <ul class="space-y-4 text-gray-300">
             <li class="flex justify-between border-b border-white/5 pb-2">
-              <span>Senin - Jumat</span>
+              <span>Hari Biasa</span>
               <span class="font-bold">10:00 - 22:00</span>
             </li>
             <li class="flex justify-between border-b border-white/5 pb-2">
-              <span>Sabtu - Minggu</span>
-              <span class="font-bold">10:00 - 23:00</span>
+              <span>Kamis</span>
+              <span class="font-bold"></span>LIBUR
             </li>
           </ul>
         </div>
@@ -504,19 +524,19 @@
           <div class="flex gap-4">
             <a
               class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
-              href="#"
+              href="https://www.tiktok.com/@seblakguyon?_r=1&_t=ZS-92xKRuewwe0"
             >
               <span class="material-symbols-outlined">call</span>
             </a>
             <a
               class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
-              href="#"
+              href="https://www.instagram.com/seblak.guyon?igsh=MXJxYW14YXA5ZWN0Nw=="
             >
               <span class="material-symbols-outlined">photo_camera</span>
             </a>
             <a
               class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
-              href="#"
+              href="https://wa.me/6281227873980"
             >
               <span class="material-symbols-outlined">chat</span>
             </a>
