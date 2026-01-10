@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Seblak Guyon</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;family=Permanent+Marker&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#a30300",
+              "amber-gold": "#FEC115",
+              "tropical-mint": "#0FEFA2",
+              "background-light": "#f8f5f5",
+              "background-dark": "#070606",
+              "charcoal-dark": "#121010",
+              "dark-khaki": "#2C2B20",
+            },
+            fontFamily: {
+              display: ["Be Vietnam Pro", "sans-serif"],
+              marker: ["Permanent Marker", "cursive"],
+            },
+            backgroundImage: {
+              noise:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden"
+  >
+    <!-- Navbar -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300"
+    >
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <div
+              class="relative flex items-center justify-center size-10 rounded-full bg-primary text-white"
+            >
+              <img src="/assets/logo.png" alt="Logo" />
+            </div>
+            <span
+              class="text-xl font-black tracking-tighter uppercase text-white"
+            >
+              Seblak Guyon
+            </span>
+          </div>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-10">
+            <a class="nav-link" href="#hero">Beranda</a>
+            <a class="nav-link" href="#menu">Menu</a>
+            <a class="nav-link" href="#lokasi">Lokasi</a>
+            <a class="nav-link" href="#kontak">Kontak</a>
+          </nav>
+
+          <!-- Mobile Button -->
+          <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden bg-black/70 backdrop-blur-xl border-t border-white/10"
+      >
+        <nav class="flex flex-col gap-4 px-6 py-6">
+          <a class="mobile-link" href="#hero">Beranda</a>
+          <a class="mobile-link" href="#menu">Menu</a>
+          <a class="mobile-link" href="#lokasi">Lokasi</a>
+          <a class="mobile-link" href="#kontak">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-2 overflow-hidden bg-background-dark"
+    >
+      <!-- Background Noise Texture -->
+      <div
+        class="absolute inset-0 bg-noise opacity-30 pointer-events-none z-0"
+      ></div>
+      <!-- Abstract Background Glows -->
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full z-0"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-amber-gold/5 blur-[100px] rounded-full z-0"
+      ></div>
+      <div class="container mx-auto px-6 lg:px-12 relative z-10 w-full h-full">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full min-h-[600px]"
+        >
+          <!-- Left Content: Typography & CTA -->
+          <div
+            class="flex flex-col items-start gap-6 max-w-2xl order-2 lg:order-1 relative"
+          >
+            <!-- Open Badge -->
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tropical-mint/10 border border-tropical-mint/20 backdrop-blur-sm"
+            >
+              <span class="relative flex h-2.5 w-2.5">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tropical-mint opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tropical-mint"
+                ></span>
+              </span>
+              <span
+                class="text-tropical-mint text-xs font-bold tracking-widest uppercase"
+                >Buka Sekarang</span
+              >
+            </div>
+            <!-- Main Heading -->
+            <div class="relative">
+              <h1
+                class="text-6xl sm:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tight text-white uppercase relative z-10"
+              >
+                Seblak <br />
+                <span class="text-primary">Guyon</span>
+              </h1>
+              <!-- Tagline Script -->
+              <span
+                class="absolute-top-12 right-0 lg:-right-12 lg:top-4 rotate-[-12deg] text-amber-gold font-marker text-3xl sm:text-4xl lg:text-5xl z-20 drop-shadow-md"
+              >
+                Tak Jamin Emboh!
+              </span>
+            </div>
+            <!-- Subheading -->
+            <p
+              class="text-gray-400 text-lg sm:text-xl font-medium max-w-md leading-relaxed mt-2"
+            >
+              Sensasi pedas yang bikin ketawa, rasa yang nggak bercanda. Dijamin
+              huh-hah!
+            </p>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-6 mt-4">
+              <a
+                href="#menu"
+                class="relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-2"
+              >
+                <span>Lihat Menu</span>
+                <span class="material-symbols-outlined text-xl"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+          <!-- Right Content: Hero Image -->
+          <div
+            class="relative flex items-center justify-center order-1 lg:order-2 h-[400px] lg:h-auto"
+          >
+            <!-- Decorative Circle behind image -->
+            <div
+              class="absolute w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] rounded-full border-2 border-dashed border-white/10 animate-[spin_20s_linear_infinite]"
+            ></div>
+            <div
+              class="absolute w-[250px] h-[250px] lg:w-[420px] lg:h-[420px] rounded-full bg-gradient-to-tr from-primary/30 to-amber-gold/10 blur-3xl"
+            ></div>
+            <!-- Main Product Image -->
+            <div class="relative z-10 w-full max-w-lg aspect-square">
+              <!-- Floating Ingredients (Decorative) -->
+              <div
+                class="absolute -top-4 -left-4 z-20 animate-[bounce_3s_infinite] bg-background-dark rounded-full p-2 border border-white/10 shadow-xl"
+              >
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >local_fire_department</span
+                >
+              </div>
+              <div
+                class="absolute top-1/2 -right-8 z-20 animate-[pulse_4s_infinite] bg-background-dark rounded-full p-2 border border-white/10 shadow-xl"
+              >
+                <span class="material-symbols-outlined text-amber-gold text-2xl"
+                  >star</span
+                >
+              </div>
+              <div
+                class="absolute bottom-10 -left-8 z-20 animate-[bounce_4s_infinite] bg-background-dark rounded-full p-3 border border-white/10 shadow-xl delay-700"
+              >
+                <div
+                  class="text-xs font-bold text-white leading-none text-center"
+                >
+                  100%<br /><span class="text-[10px] text-gray-400 font-normal"
+                    >Halal</span
+                  >
+                </div>
+              </div>
+              <!-- Main Image Container -->
+              <div
+                class="w-full h-full rounded-full overflow-hidden relative shadow-2xl shadow-primary/20 border-4 border-white/5 bg-charcoal-dark"
+                data-alt="Top down view of a spicy bowl of Seblak with red broth, crackers, chicken feet, and meatballs"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPO7FIUR94BzW7iaPjo_rLthtHSgp-oLrKCT6wGXbiKO2b0ONgZYrllvYdkGKHv5TSLaVBsRebjyhKBHkCTqmaUSEiqHo7tEh2SQQpjHSFxPdfUTGtgNFVuhlnTp7WX_Dz_6A5I8V3nsCvIFtrMIWWeCbunwVJD7thgUOf-aZ2Ae_aJHv9ThymwJ46AxBeOmYQV8uwYPCSL2X7r0_ish7pvJtpGZjEDifAvssa6BhBRcGt52ONLXWKHaqmDz8Lg0F5WrDacyybFK8');
+                  background-size: cover;
+                  background-position: center;
+                "
+              >
+                <!-- Overlay gradient to blend bottom slightly -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="marquee"
+      class="relative w-full overflow-hidden bg-primary py-2 border-t-4 border-black"
+    >
+      <div
+        class="flex whitespace-nowrap gap-8 animate-[marquee_20s_linear_infinite]"
+      >
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • PEDAS NENDANG
+        </span>
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • HARGA KAKI LIMA
+        </span>
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • RASA BINTANG LIMA
+        </span>
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • SEBLAK GUYON
+        </span>
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • PEDAS NENDANG
+        </span>
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • HARGA KAKI LIMA
+        </span>
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • RASA BINTANG LIMA
+        </span>
+        <span class="text-black font-black uppercase text-xl tracking-widest">
+          • SEBLAK GUYON
+        </span>
+      </div>
+    </section>
+
+    <section id="menu" class="flex-1 flex flex-col items-center w-full">
+      <!-- Hero Banner -->
+      <div class="w-full max-w-[1280px] px-4 md:px-10 py-8">
+        <div
+          class="relative w-full rounded-2xl overflow-hidden shadow-retro group"
+        >
+          <!-- Background Image -->
+          <div
+            class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+            data-alt="Dark moody photography of red spicy indonesian noodle soup with steam rising"
+            style="
+              background-image: linear-gradient(
+                  to right,
+                  rgba(0, 0, 0, 0.8),
+                  rgba(0, 0, 0, 0.2)
+                ),
+                url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOjitA9Sc3IQQc0VAu36P7yZ_7xJSeorH3rxFdlXRNSiKiWOrsfjygB7zLKwOKRYgmbH4LkaMkIbnlLks1tPRoQo2TYXWfCoRwx-ZPtHLltrQBTSYaZSPTAql9JMMdV2x2cuXRCoVe5W66Vw75CxKmmLAeaCm86R_l677fGwbuaDQtvLiikM443lHB8khZraMWMcRHd6tCMpuxU5eh5OCKXJX5wNu_ub9R8pyD2gNn2i6VcHzJAzWFAAkMgbtKptUPkRIGespDYE0');
+            "
+          ></div>
+          <div
+            class="relative z-10 flex flex-col justify-end min-h-[300px] md:min-h-[400px] p-6 md:p-12 max-w-2xl"
+          >
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-accent-gold/20 backdrop-blur-md border border-accent-gold/50 w-fit"
+            >
+              <span class="material-symbols-outlined text-accent-gold text-sm"
+                >whatshot</span
+              >
+              <span
+                class="text-accent-gold text-xs font-bold uppercase tracking-wider"
+                >Spicy Level: Extreme</span
+              >
+            </div>
+            <h1
+              class="text-4xl md:text-6xl font-black leading-tight tracking-tighter mb-4 text-white drop-shadow-lg"
+            >
+              Pedasnya
+              <span
+                class="text-primary bg-white px-2 italic transform -skew-x-12 inline-block"
+                >Gak Santuy!</span
+              >
+            </h1>
+          </div>
+        </div>
+      </div>
+      <!-- Menu Grid -->
+      <div class="w-full max-w-[1280px] px-4 md:px-10 pb-24">
+        <div
+          id="menu-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10"
+        ></div>
+      </div>
+    </section>
+    <!-- Customization Section -->
+    <section class="bg-dark-khaki py-24" id="topping">
+      <div class="max-w-7xl mx-auto px-6 lg:px-20">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-black uppercase italic mb-4">
+            Custom Seblakmu
+          </h2>
+          <div class="h-1 w-24 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Pedas Column -->
+          <div>
+            <div class="flex items-center gap-3 mb-8">
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >local_fire_department</span
+              >
+              <h3 class="text-2xl font-black uppercase tracking-tighter">
+                Level Pedas
+              </h3>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-amber-gold"
+              >
+                <span class="font-bold text-lg">Level 1 (Santai)</span>
+                <span class="text-amber-gold material-symbols-outlined"
+                  >sentiment_satisfied</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-orange-500"
+              >
+                <span class="font-bold text-lg">Level 2 (Pemanasan)</span>
+                <span class="text-orange-500 material-symbols-outlined"
+                  >sentiment_neutral</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-red-500"
+              >
+                <span class="font-bold text-lg">Level 3 (Merem Melek)</span>
+                <span class="text-red-500 material-symbols-outlined"
+                  >sentiment_dissatisfied</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-primary"
+              >
+                <span class="font-bold text-lg">Level 5 (Dung-dung Prett)</span>
+                <span
+                  class="text-primary material-symbols-outlined font-black text-3xl"
+                  >skull</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Topping Column -->
+          <div>
+            <div class="flex items-center gap-3 mb-8">
+              <span
+                class="material-symbols-outlined text-tropical-mint text-3xl"
+                >add_circle</span
+              >
+              <h3 class="text-2xl font-black uppercase tracking-tighter">
+                Pilihan Topping
+              </h3>
+            </div>
+            <div id="topping-list" class="flex flex-wrap gap-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Location Section -->
+    <section
+      id="lokasi"
+      class="py-24 px-6 lg:px-20 max-w-7xl mx-auto"
+      id="lokasi"
+    >
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-black uppercase italic mb-4">
+          Lokasi Kami
+        </h2>
+        <p class="text-gray-400">
+          Mampir langsung ke outlet kami buat sensasi makan seblak paling fresh.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Location 1 -->
+        <div class="group bg-[#161616] p-6 rounded-2xl shadow-retro space-y-6">
+          <div class="overflow-hidden rounded-xl border-2 border-[#FEC115]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.640105924759!2d112.67416469999999!3d-7.394162499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e375b9a183ad%3A0xf6277dad78ba4c95!2sSeblak%20Guyon%20Dungus!5e0!3m2!1sid!2sid!4v1768023211021!5m2!1sid!2sid"
+              width="600"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <h4 class="text-2xl font-black uppercase mb-1">Cabang Dungus</h4>
+          <p class="text-gray-400 mb-4">
+            sebelah warkop tretan, jl perempatan dungus No.25, Sukadono,
+            Sukodono, Kec. Sukodono, Kabupaten Sidoarjo, Jawa Timur 61258
+          </p>
+        </div>
+        <!-- Location 2 -->
+        <div class="group bg-[#161616] p-6 rounded-2xl shadow-retro space-y-6">
+          <div class="overflow-hidden rounded-xl border-2 border-[#FEC115]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.094075093722!2d112.70004981017682!3d-7.343332192634751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fd33107a6495%3A0xcbd83fbaff5a8010!2sSEBLAK%20GUYON%20BEBEKAN!5e0!3m2!1sid!2sid!4v1768022892822!5m2!1sid!2sid"
+              width="600"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <h4 class="text-2xl font-black uppercase mb-1">Cabang Bebekan</h4>
+          <p class="text-gray-400 mb-4">
+            di bawah, Dekat, Jl. Bebekan Timur Jl. Tol Surabaya - Mojokerto
+            No.55, Bebekan, Kec. Taman, Kabupaten Sidoarjo, Jawa Timur 61257
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer
+      class="bg-[#0c0a0a] pt-20 pb-10 px-6 lg:px-20 border-t border-white/5"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 mb-20"
+      >
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-primary rounded-full flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-white text-2xl font-black"
+                >local_fire_department</span
+              >
+            </div>
+            <h2
+              class="text-2xl font-black uppercase italic text-white tracking-tighter"
+            >
+              Seblak Guyon
+            </h2>
+          </div>
+          <p class="text-gray-400 italic">
+            "Pedesnya bukan guyonan, rasanya tak jamin emboh. Pelopor seblak
+            balungan paling brutal di Sidoarjo."
+          </p>
+        </div>
+        <div>
+          <h4
+            class="text-lg font-black uppercase mb-6 tracking-widest text-primary"
+          >
+            Jam Operasional
+          </h4>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex justify-between border-b border-white/5 pb-2">
+              <span>Senin - Jumat</span>
+              <span class="font-bold">10:00 - 22:00</span>
+            </li>
+            <li class="flex justify-between border-b border-white/5 pb-2">
+              <span>Sabtu - Minggu</span>
+              <span class="font-bold">10:00 - 23:00</span>
+            </li>
+          </ul>
+        </div>
+        <div id="kontak">
+          <h4
+            class="text-lg font-black uppercase mb-6 tracking-widest text-primary"
+          >
+            Social Media
+          </h4>
+          <div class="flex gap-4">
+            <a
+              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined">call</span>
+            </a>
+            <a
+              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined">photo_camera</span>
+            </a>
+            <a
+              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined">chat</span>
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-gray-500">
+            DM us for partnership / catering
+          </p>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto text-center border-t border-white/5 pt-10">
+        <p class="text-gray-600 text-xs font-bold uppercase tracking-[0.2em]">
+          © 2026 Seblak Guyon. All Rights Reserved. Tak Jamin Emboh!
+        </p>
+      </div>
+    </footer>
+    <!-- Floating Action Button -->
+    <a
+      class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center gap-2 group"
+      href="https://wa.me/6281227873980"
+    >
+      <span class="material-symbols-outlined text-3xl">chat</span>
+      <span
+        class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-bold uppercase tracking-tight text-sm whitespace-nowrap"
+        >Order WhatsApp</span
+      >
+    </a>
+    <script src="script.js"></script>
+  </body>
+</html>
