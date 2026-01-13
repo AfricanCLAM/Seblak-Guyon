@@ -1,1 +1,8 @@
-- ganti theme color website all
+- BG orange kuning (warna logo) wavy
+- sejajarkan logo dan banner di Hero
+- mobile first
+- logo terlalu besar
+- level sampai 10
+    6-7 = 2K
+    8-10 = 3k
+- add menu tebus murah 4-6 sore

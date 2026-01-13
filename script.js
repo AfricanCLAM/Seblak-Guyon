@@ -99,7 +99,7 @@ const menus = [
     id: 1,
     name: "Seblak Original",
     category: "Seblak Paket",
-    description: "Pentol mekar 2, sosis, cireng, pentol, sayur, telur kocok, kerupuk",
+    description: "Pentol mekar 2, sosis,  pentol, sayur, telur kocok, kerupuk",
     price: "10K",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
     spicy_level: 3,
@@ -109,7 +109,7 @@ const menus = [
     id: 2,
     name: "Seblak Siomay",
     category: "Seblak Paket",
-    description: "Siomay 5, cireng, pentol, sayur, telur kocok, kerupuk",
+    description: "Siomay 5,  pentol, sayur, telur kocok, kerupuk",
     price: "10K",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
     spicy_level: 2,
@@ -119,7 +119,7 @@ const menus = [
     id: 3,
     name: "Seblak Balungan",
     category: "Seblak Paket",
-    description: "Krongkongan ayam, cireng, pentol, sayur, telur kocok, kerupuk",
+    description: "Krongkongan ayam,  pentol, sayur, telur kocok, kerupuk",
     price: "10K",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
     spicy_level: 3,
@@ -129,7 +129,7 @@ const menus = [
     id: 4,
     name: "Seblak Ceker",
     category: "Seblak Paket",
-    description: "Ceker kecil 4, pentol, cireng, sayur, telur kocok, kerupuk",
+    description: "Ceker kecil 4, pentol,  sayur, telur kocok, kerupuk",
     price: "10K",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
     spicy_level: 4,
@@ -139,7 +139,7 @@ const menus = [
     id: 5,
     name: "Seblak Pentol",
     category: "Seblak Paket",
-    description: "Pentol 5, cireng, sayur, telur kocok, kerupuk",
+    description: "Pentol 5,  sayur, telur kocok, kerupuk",
     price: "10K",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
     spicy_level: 2,
@@ -207,8 +207,8 @@ menuGrid.innerHTML = menus.map(menu => `
 
 // Toppings
 const toppings = [
-  { id: 1, name: "Jamur Enoki", price: "6K" },
-  { id: 2, name: "Balungan", price: "4K" },
+  { id: 1, name: "Jamur Enoki", price: "5K" },
+  { id: 2, name: "Balungan", price: "5K" },
   { id: 3, name: "Telor Ayam", price: "4K" },
   { id: 4, name: "Cuanki", price: "2K" },
   { id: 5, name: "Pilus", price: "2K" },
@@ -216,8 +216,7 @@ const toppings = [
   { id: 7, name: "Kerupuk", price: "2K" },
   { id: 8, name: "Mie Kuning", price: "2K" },
   { id: 9, name: "Ceker Besar", price: "2K" },
-  { id: 10, name: "Ceker Kecil", price: "1K" },
-  { id: 11, name: "Cireng (5 biji)", price: "1K" }
+  { id: 10, name: "Ceker Kecil", price: "1K" }
 ];
 
 document.getElementById("topping-list").innerHTML =
