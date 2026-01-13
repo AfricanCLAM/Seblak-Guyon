@@ -6,3 +6,4 @@
     6-7 = 2K
     8-10 = 3k
 - add menu tebus murah 4-6 sore
+- whatsapp periodic shake
