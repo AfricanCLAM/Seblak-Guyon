@@ -9,7 +9,7 @@ tailwind.config.theme.extend.keyframes = {
 
 // Jam Operasional
 const OPERASIONAL = {
-  biasa: { open: "10:00", close: "22:00" },
+  biasa: { open: "16:00", close: "22:00" },
   kamis: null
 };
 
@@ -143,6 +143,16 @@ const menus = [
     price: "10K",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
     spicy_level: 2,
+    is_best_seller: false
+  },
+  {
+    id: 6,
+    name: "Seblak Prasmanan",
+    category: "Seblak Paket",
+    description: "Minimal Pembelian 10k Free Sayur bumbu Sambel",
+    price: "Start From 10K",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBz4zBho658brr2aVN_B7SsWYjuY0zn0sw8VvDq6joPxQYy_MGsG4oQDBkP7-6Tqoci9zpTr-cit8THNXm5FfasBD9LrbuIjr3WwQXFa1uD1QeRnY3xJsV7Km8ypnWOlk0-Ugwd4C6K30QxmDgvf_4Mwns7ORH3SAllV3rF8e1G6t3f1-mamcNNNkhrX6gJbk4MRSV-kNE0EkYM8AYBkWOvBzt9q8cQM6y9cPMRZe4BXLvxaE-U3P4vuQyP2VvNyi3HuVNNlN5xntg",
+    spicy_level: 5,
     is_best_seller: false
   }
 ];
