@@ -26,3 +26,50 @@ html {
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes shakeEvery5s {
+  0%,
+  90% {
+    transform: translateX(0);
+  }
+  91%,
+  93%,
+  95%,
+  97%,
+  99% {
+    transform: translateX(-5px);
+  }
+  92%,
+  94%,
+  96%,
+  98% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.whatsapp-shake {
+  animation: shakeEvery5s 5s ease-in-out infinite;
+}

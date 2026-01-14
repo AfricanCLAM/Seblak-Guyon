@@ -80,7 +80,7 @@
               "Saturday",
               "Sunday"
             ],
-            "opens": "10:00",
+            "opens": "16:00",
             "closes": "22:00"
           }
         ],
@@ -159,12 +159,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body
-    class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden"
+    class="bg-wave font-display text-white overflow-x-hidden"
+    style="background: linear-gradient(135deg, #fec115 0%, #a30300 100%)"
   >
     <!-- Navbar -->
     <header
       id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300"
+      class="fixed top-0 left-0 right-0 z-50 mb-5 w-full transition-all duration-300 bg-primary shadow-lg"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -173,17 +174,16 @@
           <!-- Logo -->
           <div class="flex items-center gap-3">
             <div
-              class="relative flex items-center justify-center size-10 rounded-full bg-primary text-white"
+              class="relative flex items-center justify-center size-8 md:size-10 rounded-full bg-primary text-white"
             >
               <img
                 src="/assets/logo.png"
                 alt="Logo Seblak Guyon"
-                width="40"
-                height="40"
+                class="w-full h-full object-contain"
               />
             </div>
             <span
-              class="text-xl font-black tracking-tighter uppercase text-white"
+              class="text-lg md:text-xl font-black tracking-tighter uppercase text-white"
             >
               Seblak Guyon
             </span>
@@ -223,7 +223,7 @@
       <!-- Mobile Menu -->
       <div
         id="mobileMenu"
-        class="md:hidden hidden bg-black/70 backdrop-blur-xl border-t border-white/10"
+        class="md:hidden hidden bg-primary border-t border-white/10"
         role="menu"
       >
         <nav class="flex flex-col gap-4 px-6 py-6">
@@ -238,7 +238,7 @@
     <!-- Hero Section -->
     <section
       id="hero"
-      class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-2 overflow-hidden bg-background-dark"
+      class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-2 overflow-hidden"
     >
       <!-- Background Noise Texture -->
       <div
@@ -258,7 +258,7 @@
 
       <div class="container mx-auto px-6 lg:px-12 relative z-10 w-full h-full">
         <div
-          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full min-h-[600px]"
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start h-full min-h-[600px]"
         >
           <!-- Left Content: Typography & CTA -->
           <div
@@ -309,7 +309,7 @@
                 <a
                   href="https://gofood.co.id/surabaya/restaurant/seblak-guyon-dungus-jl-perempatan-dungus-no-25-0a8914c2-5dcc-4204-a360-26bef2e9cfb5"
                   target="_blank"
-                  class="relative bg-white/10 hover:bg-white/20 text-white text-base lg:text-md font-bold py-2 px-4 rounded-lg uppercase tracking-wide flex items-center gap-3 border border-white/20 transition"
+                  class="relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg md:text-md font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
                   aria-label="Pesan makanan via GoFood"
                 >
                   <img
@@ -324,8 +324,8 @@
                 <a
                   href="https://shopee.co.id/universal-link/now-food/shop/21565446?deep_and_deferred=1&shareChannel=copy_link"
                   target="_blank"
-                  class="relative bg-white/10 hover:bg-white/20 text-white text-base lg:text-md md:text-md font-bold py-2 px-4 rounded-lg uppercase tracking-wide flex items-center gap-3 border border-white/20 transition"
-                  aria-label="Pesan makanan via GoFood"
+                  class="relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg md:text-md font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
+                  aria-label="Pesan makanan via ShopeeFood"
                 >
                   <img
                     src="/assets/shopeefood.png"
@@ -336,12 +336,12 @@
                 </a>
               </div>
               <div class="mt-4 grid grid-cols-2 gap-4">
-                <!-- ShopeeFood -->
+                <!-- WhatsApp Order -->
                 <a
                   href="https://wa.me/6281932900882"
                   target="_blank"
-                  class="relative bg-white/10 hover:bg-white/20 text-white text-base lg:text-md md:text-md font-bold py-2 px-4 rounded-lg uppercase tracking-wide flex items-center gap-3 border border-white/20 transition"
-                  aria-label="Pesan makanan via GoFood"
+                  class="whatsapp-shake relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg md:text-md font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
+                  aria-label="Pesan makanan via WhatsApp"
                 >
                   <i class="fab fa-whatsapp text-3xl"></i>
                   <span>Order Whatsapp</span>
@@ -377,12 +377,6 @@
             <div class="relative z-10 w-full max-w-lg aspect-square">
               <!-- Floating Ingredients (Decorative) -->
               <div
-                class="absolute -top-4 -left-4 z-20 animate-[bounce_3s_infinite] bg-background-dark rounded-full p-2 border border-white/10 shadow-xl"
-                aria-hidden="true"
-              >
-                <i class="fas fa-fire text-primary text-3xl"></i>
-              </div>
-              <div
                 class="absolute top-1/2 -right-8 z-20 animate-[pulse_4s_infinite] bg-background-dark rounded-full p-2 border border-white/10 shadow-xl"
                 aria-hidden="true"
               >
@@ -403,11 +397,12 @@
 
               <!-- Main Image Container -->
               <div
-                class="w-full h-full rounded-full overflow-hidden relative shadow-2xl shadow-primary/20 border-4 border-white/5 bg-charcoal-dark"
+                class="w-full h-full rounded-full overflow-hidden relative shadow-2xl shadow-[#a30300]/30 border-4 border-white/5 bg-[#a30300]"
                 style="
                   background-image: url('assets/hero.png');
                   background-size: 50;
                   background-position: center;
+                  background-repeat: no-repeat;
                 "
                 role="img"
                 aria-label="Semangkuk seblak pedas dengan kuah merah, kerupuk, ceker ayam, dan bakso"
@@ -520,7 +515,7 @@
     </section>
 
     <!-- Customization Section -->
-    <section class="bg-dark-khaki py-24" id="topping">
+    <section class="py-24" id="topping">
       <div class="max-w-7xl mx-auto px-6 lg:px-20">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-black uppercase italic mb-4">
@@ -532,41 +527,69 @@
           <!-- Pedas Column -->
           <div>
             <div class="flex items-center gap-3 mb-8">
-              <i class="fas fa-fire text-primary text-3xl"></i>
-              <h3 class="text-2xl font-black uppercase tracking-tighter">
+              <i class="fas fa-fire text-amber-gold text-3xl"></i>
+              <h3
+                class="text-2xl font-black uppercase tracking-tighter text-white"
+              >
                 Level Pedas
               </h3>
             </div>
             <div class="space-y-4">
               <div
-                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-amber-gold"
+                class="flex items-center justify-between p-4 bg-background-dark/60 border-l-4 border-amber-gold"
               >
-                <span class="font-bold text-lg">Level 1 (1/2 Sendok)</span>
+                <span class="font-bold text-lg text-white"
+                  >Level 1 (1/2 Sendok)</span
+                >
                 <i class="far fa-smile text-amber-gold text-xl"></i>
               </div>
               <div
-                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-orange-500"
+                class="flex items-center justify-between p-4 bg-background-dark/60 border-l-4 border-orange-500"
               >
-                <span class="font-bold text-lg">Level 2 (1 1/2 Sendok)</span>
+                <span class="font-bold text-lg text-white"
+                  >Level 2 (1 1/2 Sendok)</span
+                >
                 <i class="far fa-meh text-orange-500 text-xl"></i>
               </div>
               <div
-                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-red-500"
+                class="flex items-center justify-between p-4 bg-background-dark/60 border-l-4 border-red-500"
               >
-                <span class="font-bold text-lg">Level 3 (3 Sendok)</span>
+                <span class="font-bold text-lg text-white"
+                  >Level 3 (3 Sendok)</span
+                >
                 <i class="far fa-frown text-red-500 text-xl"></i>
               </div>
               <div
-                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-red-600"
+                class="flex items-center justify-between p-4 bg-background-dark/60 border-l-4 border-red-600"
               >
-                <span class="font-bold text-lg">Level 4 (4 Sendok)</span>
+                <span class="font-bold text-lg text-white"
+                  >Level 4 (4 Sendok)</span
+                >
                 <i class="far fa-frown text-red-600 text-xl"></i>
               </div>
               <div
-                class="flex items-center justify-between p-4 bg-background-dark/40 border-l-4 border-primary"
+                class="flex items-center justify-between p-4 bg-background-dark/60 border-l-4 border-primary"
               >
-                <span class="font-bold text-lg">Level 5 (5 Sendok)</span>
-                <i class="fas fa-skull text-primary text-3xl"></i>
+                <span class="font-bold text-lg text-white"
+                  >Level 5 (5 Sendok)</span
+                >
+                <i class="fas fa-skull text-amber-gold text-3xl"></i>
+              </div>
+              <div
+                class="flex items-center justify-between p-4 bg-background-dark/60 border-l-4 border-primary"
+              >
+                <span class="font-bold text-lg text-white"
+                  >Level 6-7 (+2K)</span
+                >
+                <i class="fas fa-skull-crossbones text-amber-gold text-3xl"></i>
+              </div>
+              <div
+                class="flex items-center justify-between p-4 bg-background-dark/60 border-l-4 border-primary"
+              >
+                <span class="font-bold text-lg text-white"
+                  >Level 8-10 (+3K)</span
+                >
+                <i class="fas fa-fire-alt text-amber-gold text-3xl"></i>
               </div>
             </div>
           </div>
@@ -574,8 +597,10 @@
           <!-- Topping Column -->
           <div>
             <div class="flex items-center gap-3 mb-8">
-              <i class="fas fa-plus-circle text-tropical-mint text-3xl"></i>
-              <h3 class="text-2xl font-black uppercase tracking-tighter">
+              <i class="fas fa-plus-circle text-amber-gold text-3xl"></i>
+              <h3
+                class="text-2xl font-black uppercase tracking-tighter text-white"
+              >
                 Pilihan Topping
               </h3>
             </div>
@@ -598,9 +623,9 @@
       <div class="grid grid-cols-1 place-items-center gap-12 max-w-5xl mx-auto">
         <!-- Location 1 - Dungus -->
         <article
-          class="group bg-[#161616] p-8 rounded-3xl shadow-retro space-y-6 w-full"
+          class="group bg-[#FEC115] p-8 rounded-3xl shadow-retro space-y-6 w-full text-[#a30300]"
         >
-          <div class="overflow-hidden rounded-2xl border-2 border-[#FEC115]">
+          <div class="overflow-hidden rounded-2xl border-2 border-[#a30300]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.640105924759!2d112.67416469999999!3d-7.394162499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e375b9a183ad%3A0xf6277dad78ba4c95!2sSeblak%20Guyon%20Dungus!5e0!3m2!1sid!2sid!4v1768023211021!5m2!1sid!2sid"
               class="w-full h-[360px]"
@@ -614,8 +639,8 @@
 
           <h3 class="text-3xl font-black uppercase">Dungus Sukodono</h3>
 
-          <p class="text-gray-400 text-lg">
-            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+          <p class="text-lg text-[#a30300]/80">
+            <i class="fas fa-map-marker-alt text-[#a30300] mr-2"></i>
             Sebelah warkop tretan, Jl Perempatan Dungus No.25, Sukadono,
             Sukodono, Kec. Sukodono, Kabupaten Sidoarjo, Jawa Timur 61258
           </p>
@@ -625,7 +650,7 @@
 
     <!-- Footer -->
     <footer
-      class="bg-[#0c0a0a] pt-20 pb-10 px-6 lg:px-20 border-t border-white/5"
+      class="bg-primary pt-20 pb-10 px-6 lg:px-20 border-t border-white/20"
       role="contentinfo"
     >
       <div
@@ -645,7 +670,7 @@
             </h2>
           </div>
 
-          <p class="text-gray-400 italic mb-4">
+          <p class="text-gray-300 italic mb-4 font-medium">
             "Pedesnya bukan guyonan, rasanya tak jamin emboh. Pelopor seblak
             balungan paling brutal di Sidoarjo."
           </p>
@@ -654,10 +679,10 @@
           <a
             href="https://gofood.co.id/surabaya/restaurant/seblak-guyon-dungus-jl-perempatan-dungus-no-25-0a8914c2-5dcc-4204-a360-26bef2e9cfb5"
             target="_blank"
-            class="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition border border-white/10 mb-2"
+            class="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-amber-gold hover:bg-amber-gold/90 transition border border-amber-gold mb-2"
           >
             <img src="/assets/gofood.jpg" alt="GoFood" class="h-6 w-auto" />
-            <span class="text-sm font-bold tracking-wide text-white">
+            <span class="text-sm font-bold tracking-wide text-black">
               Pesan via GoFood
             </span>
           </a>
@@ -665,10 +690,14 @@
           <a
             href="https://shopee.co.id/universal-link/now-food/shop/21565446?deep_and_deferred=1&shareChannel=copy_link"
             target="_blank"
-            class="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 transition border border-white/10 mb-2"
+            class="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-amber-gold hover:bg-amber-gold/90 transition border border-amber-gold mb-2"
           >
-            <img src="/assets/shopeefood.png" alt="GoFood" class="h-6 w-auto" />
-            <span class="text-sm font-bold tracking-wide text-white">
+            <img
+              src="/assets/shopeefood.png"
+              alt="ShopeeFood"
+              class="h-6 w-auto"
+            />
+            <span class="text-sm font-bold tracking-wide text-black">
               Pesan via ShopeeFood
             </span>
           </a>
@@ -676,30 +705,34 @@
 
         <div>
           <h3
-            class="text-lg font-black uppercase mb-6 tracking-widest text-primary"
+            class="text-lg font-black uppercase mb-6 tracking-widest text-white"
           >
             Jam Operasional
           </h3>
           <ul class="space-y-4 text-gray-300">
-            <li class="flex justify-between border-b border-white/5 pb-2">
-              <span><i class="far fa-calendar mr-2"></i>Hari Biasa</span>
+            <li class="flex justify-between border-b border-white/20 pb-2">
+              <span class="font-medium"
+                ><i class="far fa-calendar mr-2"></i>Hari Biasa</span
+              >
               <span class="font-bold">16:00 - 22:00</span>
             </li>
-            <li class="flex justify-between border-b border-white/5 pb-2">
-              <span><i class="far fa-calendar-times mr-2"></i>Kamis</span>
-              <span class="font-bold text-red-500">LIBUR</span>
+            <li class="flex justify-between border-b border-white/20 pb-2">
+              <span class="font-medium"
+                ><i class="far fa-calendar-times mr-2"></i>Kamis</span
+              >
+              <span class="font-bold text-amber-gold">LIBUR</span>
             </li>
           </ul>
         </div>
         <div id="kontak">
           <h3
-            class="text-lg font-black uppercase mb-6 tracking-widest text-primary"
+            class="text-lg font-black uppercase mb-6 tracking-widest text-white"
           >
             Social Media
           </h3>
           <div class="flex gap-4">
             <a
-              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              class="w-12 h-12 rounded-lg bg-amber-gold text-black flex items-center justify-center border border-amber-gold hover:bg-amber-gold/80 hover:scale-110 transition-all"
               href="https://www.tiktok.com/@seblakguyon?_r=1&_t=ZS-92xKRuewwe0"
               target="_blank"
               rel="noopener noreferrer"
@@ -708,7 +741,7 @@
               <i class="fab fa-tiktok text-xl"></i>
             </a>
             <a
-              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              class="w-12 h-12 rounded-lg bg-amber-gold text-black flex items-center justify-center border border-amber-gold hover:bg-amber-gold/80 hover:scale-110 transition-all"
               href="https://www.instagram.com/seblak.guyon?igsh=MXJxYW14YXA5ZWN0Nw=="
               target="_blank"
               rel="noopener noreferrer"
@@ -717,7 +750,7 @@
               <i class="fab fa-instagram text-xl"></i>
             </a>
             <a
-              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              class="w-12 h-12 rounded-lg bg-amber-gold text-black flex items-center justify-center border border-amber-gold hover:bg-amber-gold/80 hover:scale-110 transition-all"
               href="https://wa.me/6281932900882"
               target="_blank"
               rel="noopener noreferrer"
@@ -726,7 +759,7 @@
               <i class="fab fa-whatsapp text-xl"></i>
             </a>
             <a
-              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              class="w-12 h-12 rounded-lg bg-amber-gold text-black flex items-center justify-center border border-amber-gold hover:bg-amber-gold/80 hover:scale-110 transition-all"
               href="https://www.youtube.com/@seblakguyon"
               target="_blank"
               rel="noopener noreferrer"
@@ -735,7 +768,7 @@
               <i class="fa-brands fa-youtube text-xl"></i>
             </a>
             <a
-              class="w-12 h-12 rounded-lg bg-zinc-900 flex items-center justify-center border border-white/10 hover:border-amber-gold hover:text-amber-gold transition-all"
+              class="w-12 h-12 rounded-lg bg-amber-gold text-black flex items-center justify-center border border-amber-gold hover:bg-amber-gold/80 hover:scale-110 transition-all"
               href="https://www.facebook.com/profile.php?id=100088988065680&mibextid=ZbWKwL"
               target="_blank"
               rel="noopener noreferrer"
@@ -744,14 +777,14 @@
               <i class="fa-brands fa-facebook text-xl"></i>
             </a>
           </div>
-          <p class="mt-6 text-sm text-gray-500">
+          <p class="mt-6 text-sm text-gray-300 font-medium">
             <i class="fas fa-handshake mr-2"></i>DM us for partnership /
             catering
           </p>
         </div>
       </div>
-      <div class="max-w-7xl mx-auto text-center border-t border-white/5 pt-10">
-        <p class="text-gray-600 text-xs font-bold uppercase tracking-[0.2em]">
+      <div class="max-w-7xl mx-auto text-center border-t border-white/20 pt-10">
+        <p class="text-gray-300 text-xs font-bold uppercase tracking-[0.2em]">
           © 2026 Seblak Guyon. All Rights Reserved. Tak Jamin Emboh!
         </p>
       </div>

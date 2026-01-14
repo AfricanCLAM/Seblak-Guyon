@@ -38,17 +38,17 @@ function updateOpenStatus() {
 
   if (isOpen) {
     badge.className =
-      "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tropical-mint/10 border border-tropical-mint/20 backdrop-blur-sm";
+      "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background-light border border-tropical-mint/20 ";
     badgeText.textContent = "Buka Sekarang";
     badgeText.className =
       "text-tropical-mint text-xs font-bold tracking-widest uppercase";
     ping.className =
-      "animate-ping absolute inline-flex h-full w-full rounded-full bg-tropical-mint opacity-75";
+      "animate-ping absolute inline-flex h-full w-full rounded-full bg-mint-500 opacity-75";
     dot.className =
       "relative inline-flex rounded-full h-2.5 w-2.5 bg-tropical-mint";
   } else {
     badge.className =
-      "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 backdrop-blur-sm";
+      "inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background-light border border-red-500/20 ";
     badgeText.textContent = "Sedang Tutup";
     badgeText.className =
       "text-red-400 text-xs font-bold tracking-widest uppercase";
@@ -61,28 +61,9 @@ function updateOpenStatus() {
 updateOpenStatus();
 setInterval(updateOpenStatus, 60000);
 
-// Navbar
+// Navbar - No scroll effect needed as navbar has permanent background
 const navbar = document.getElementById("navbar");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 20) {
-    navbar.classList.add(
-      "bg-black/60",
-      "backdrop-blur-xl",
-      "border-b",
-      "border-white/10",
-      "shadow-lg"
-    );
-  } else {
-    navbar.classList.remove(
-      "bg-black/60",
-      "backdrop-blur-xl",
-      "border-b",
-      "border-white/10",
-      "shadow-lg"
-    );
-  }
-});
 
 // Mobile Menu Toggle
 const menuBtn = document.getElementById("menuBtn");
@@ -160,49 +141,50 @@ const menus = [
 const menuGrid = document.getElementById("menu-grid");
 
 menuGrid.innerHTML = menus.map(menu => `
-        <article
-          class="group relative flex flex-col bg-[#161616] rounded-xl border border-[#333] overflow-hidden shadow-retro transition-all duration-300 hover:-translate-y-1 hover:shadow-[7px_7px_0px_0px_#a30300]"
-          role="listitem"
-        >
-          <div class="aspect-[4/3] w-full bg-gray-800 relative overflow-hidden">
-            <div
-              class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-              style="background-image: url('${menu.image}')"
-              role="img"
-              aria-label="${menu.name} - ${menu.description}"
-            ></div>
+       <article
+  class="group relative flex flex-col bg-[#a30300] rounded-xl border border-[#7a0200] overflow-hidden shadow-retro transition-all duration-300 hover:-translate-y-1 hover:shadow-[7px_7px_0px_0px_#FEC115] text-[#FEC115]"
+  role="listitem"
+>
+  <div class="aspect-[4/3] w-full bg-[#7a0200] relative overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+      style="background-image: url('${menu.image}')"
+      role="img"
+      aria-label="${menu.name} - ${menu.description}"
+    ></div>
 
-            ${menu.is_best_seller ? `
-              <div class="absolute top-3 left-3 bg-primary text-white text-xs font-black px-2 py-1 rounded shadow-sm uppercase">
-                <i class="fas fa-crown mr-1"></i>Best Seller
-              </div>
-            ` : ""}
-          </div>
+    ${menu.is_best_seller ? `
+      <div class="absolute top-3 left-3 bg-[#FEC115] text-[#a30300] text-xs font-black px-2 py-1 rounded shadow-sm uppercase">
+        <i class="fas fa-crown mr-1"></i>Best Seller
+      </div>
+    ` : ""}
+  </div>
 
-          <div class="p-5 flex flex-col flex-1">
-            <div class="flex justify-between items-start mb-2">
-              <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                ${menu.name}
-              </h3>
+  <div class="p-5 flex flex-col flex-1">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-xl font-bold transition-colors group-hover:text-white">
+        ${menu.name}
+      </h3>
 
-              <div class="flex gap-0.5 text-primary" aria-label="Level pedas ${menu.spicy_level}">
-                ${Array(menu.spicy_level).fill(`
-                  <i class="fas fa-fire text-[16px]"></i>
-                `).join("")}
-              </div>
-            </div>
+      <div class="flex gap-0.5 text-[#FEC115]" aria-label="Level pedas ${menu.spicy_level}">
+        ${Array(menu.spicy_level).fill(`
+          <i class="fas fa-fire text-[16px]"></i>
+        `).join("")}
+      </div>
+    </div>
 
-            <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-              ${menu.description}
-            </p>
+    <p class="text-[#FEC115]/80 text-sm mb-6 line-clamp-2">
+      ${menu.description}
+    </p>
 
-            <div class="mt-auto flex items-center justify-between">
-              <span class="text-amber-gold text-2xl font-black tracking-tight">
-                ${menu.price}
-              </span>
-            </div>
-          </div>
-        </article>
+    <div class="mt-auto flex items-center justify-between">
+      <span class="text-[#FEC115] text-2xl font-black tracking-tight">
+        ${menu.price}
+      </span>
+    </div>
+  </div>
+</article>
+
       `).join("");
 
 // Toppings
