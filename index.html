@@ -289,12 +289,21 @@
             </div>
 
             <!-- Main Heading -->
-            <div class="relative">
+            <div
+              class="relative cursor-pointer group"
+              onclick="openBannerPreview()"
+            >
               <img
                 src="assets/banner.jpg"
                 alt="seblakguyon_tulisan"
                 height="50"
+                class="transition-transform duration-300 group-hover:scale-[1.02]"
               />
+
+              <!-- Hint -->
+              <p class="mt-2 text-xs text-gray-400 tracking-wide">
+                Klik untuk memperbesar
+              </p>
             </div>
 
             <!-- Subheading -->
@@ -309,13 +318,13 @@
                 <a
                   href="https://gofood.co.id/surabaya/restaurant/seblak-guyon-dungus-jl-perempatan-dungus-no-25-0a8914c2-5dcc-4204-a360-26bef2e9cfb5"
                   target="_blank"
-                  class="relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg md:text-md font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
+                  class="relative bg-primary hover:bg-red-700 text-white text-sm md:text-base lg:text-lg font-bold py-3 md:py-4 px-5 md:px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
                   aria-label="Pesan makanan via GoFood"
                 >
                   <img
                     src="/assets/gofood.jpg"
                     alt="GoFood"
-                    class="h-8 w-auto"
+                    class="h-6 md:h-8 w-auto"
                   />
                   <span>Pesan GoFood</span>
                 </a>
@@ -324,36 +333,42 @@
                 <a
                   href="https://shopee.co.id/universal-link/now-food/shop/21565446?deep_and_deferred=1&shareChannel=copy_link"
                   target="_blank"
-                  class="relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg md:text-md font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
+                  class="relative bg-primary hover:bg-red-700 text-white text-sm md:text-base lg:text-lg font-bold py-3 md:py-4 px-4 md:px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
                   aria-label="Pesan makanan via ShopeeFood"
                 >
                   <img
                     src="/assets/shopeefood.png"
-                    alt="GoFood"
-                    class="h-8 w-auto"
+                    alt="ShopeeFood"
+                    class="h-6 md:h-8 w-auto"
                   />
                   <span>Pesan ShopeeFood</span>
                 </a>
               </div>
+
               <div class="mt-4 grid grid-cols-2 gap-4">
                 <!-- WhatsApp Order -->
                 <a
                   href="https://wa.me/6281932900882"
                   target="_blank"
-                  class="whatsapp-shake relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg md:text-md font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
+                  class="whatsapp-shake relative bg-primary hover:bg-red-700 text-white text-sm md:text-base lg:text-lg font-bold py-3 md:py-4 px-5 md:px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-3"
                   aria-label="Pesan makanan via WhatsApp"
                 >
-                  <i class="fab fa-whatsapp text-3xl"></i>
+                  <i
+                    class="fab fa-whatsapp text-xl md:text-2xl lg:text-3xl"
+                  ></i>
                   <span>Order Whatsapp</span>
                 </a>
+
                 <!-- Lihat Menu -->
                 <a
                   href="#menu"
-                  class="relative bg-primary hover:bg-red-700 text-white text-base lg:text-lg md:text-md font-bold py-4 px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-2"
+                  class="relative bg-primary hover:bg-red-700 text-white text-sm md:text-base lg:text-lg font-bold py-3 md:py-4 px-5 md:px-8 rounded-lg cta-shadow uppercase tracking-wide flex items-center gap-2"
                   aria-label="Lihat menu makanan kami"
                 >
                   <span>Lihat Menu</span>
-                  <i class="fas fa-arrow-right text-xl"></i>
+                  <i
+                    class="fas fa-arrow-right text-base md:text-lg lg:text-xl"
+                  ></i>
                 </a>
               </div>
             </div>
@@ -374,16 +389,16 @@
             ></div>
 
             <!-- Main Product Image -->
-            <div class="relative z-10 w-full max-w-lg aspect-square">
+            <div class="relative z-10 w-full max-w-lg aspect-square px-2">
               <!-- Floating Ingredients (Decorative) -->
               <div
-                class="absolute top-1/2 -right-8 z-20 animate-[pulse_4s_infinite] bg-background-dark rounded-full p-2 border border-white/10 shadow-xl"
+                class="absolute top-1/2 -right-4 z-20 animate-[pulse_4s_infinite] bg-background-dark rounded-full p-2 border border-white/10 shadow-xl"
                 aria-hidden="true"
               >
                 <i class="fas fa-star text-amber-gold text-2xl"></i>
               </div>
               <div
-                class="absolute bottom-10 -left-8 z-20 animate-[bounce_4s_infinite] bg-background-dark rounded-full p-3 border border-white/10 shadow-xl delay-700"
+                class="absolute bottom-10 -left-5 z-20 animate-[bounce_4s_infinite] bg-background-dark rounded-full p-3 border border-white/10 shadow-xl delay-700"
                 aria-hidden="true"
               >
                 <div
@@ -400,7 +415,7 @@
                 class="w-full h-full rounded-full overflow-hidden relative shadow-2xl shadow-[#a30300]/30 border-4 border-white/5 bg-[#a30300]"
                 style="
                   background-image: url('assets/hero.png');
-                  background-size: 50;
+                  background-size: 500px;
                   background-position: center;
                   background-repeat: no-repeat;
                 "
@@ -605,6 +620,23 @@
               </h3>
             </div>
             <div id="topping-list" class="flex flex-wrap gap-3"></div>
+            <div class="flex items-start gap-3 mb-8 mt-2">
+              <i class="fas fa-plus-circle text-amber-gold text-3xl mt-1"></i>
+
+              <div class="flex flex-col">
+                <h3
+                  class="text-2xl font-black uppercase tracking-tighter text-white"
+                >
+                  Promosi
+                </h3>
+
+                <img
+                  src="/assets/tebus_murah.jpg"
+                  alt="Promosi"
+                  class="mt-2 rounded-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -804,6 +836,28 @@
         >Order WhatsApp</span
       >
     </a>
+
+    <!-- Banner Preview -->
+    <!-- Banner Preview Overlay -->
+    <div
+      id="bannerPreview"
+      class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[999] hidden items-center justify-center"
+    >
+      <!-- Close Button -->
+      <button
+        onclick="closeBannerPreview()"
+        class="absolute top-6 right-6 text-white text-sm uppercase tracking-widest hover:text-amber-gold transition"
+      >
+        Keluar →
+      </button>
+
+      <!-- Enlarged Image -->
+      <img
+        src="assets/banner.jpg"
+        alt="Banner Preview"
+        class="max-w-[90%] max-h-[85%] rounded-xl shadow-2xl"
+      />
+    </div>
 
     <script src="script.js"></script>
   </body>

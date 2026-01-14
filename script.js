@@ -7,6 +7,19 @@ tailwind.config.theme.extend.keyframes = {
   },
 };
 
+// Banner Preview
+function openBannerPreview() {
+  document.getElementById("bannerPreview").classList.remove("hidden");
+  document.getElementById("bannerPreview").classList.add("flex");
+  document.body.classList.add("overflow-hidden");
+}
+
+function closeBannerPreview() {
+  document.getElementById("bannerPreview").classList.add("hidden");
+  document.getElementById("bannerPreview").classList.remove("flex");
+  document.body.classList.remove("overflow-hidden");
+}
+
 // Jam Operasional
 const OPERASIONAL = {
   biasa: { open: "16:00", close: "22:00" },
